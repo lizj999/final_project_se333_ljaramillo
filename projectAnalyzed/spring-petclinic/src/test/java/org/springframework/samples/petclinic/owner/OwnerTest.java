@@ -8,6 +8,18 @@ import static org.junit.jupiter.api.Assertions.*;
 class OwnerTest {
 
 	@Test
+	void getters_returnValuesSetBySetters() {
+		Owner owner = new Owner();
+		owner.setAddress("123 Main");
+		owner.setCity("Boston");
+		owner.setTelephone("0123456789");
+
+		assertEquals("123 Main", owner.getAddress());
+		assertEquals("Boston", owner.getCity());
+		assertEquals("0123456789", owner.getTelephone());
+	}
+
+	@Test
 	void addPet_addsOnlyNewPets() {
 		Owner owner = new Owner();
 
