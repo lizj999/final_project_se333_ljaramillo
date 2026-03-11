@@ -6,6 +6,9 @@
 ## Project Overview
 This project implements an intelligent testing agent using the Model Context Protocol (MCP) that automatically generates, executes, and iterates on JUnit test cases to achieve maximum code coverage for the Spring Petclinic application.
 
+**Note on IDE:**
+This project uses Cursor IDE instead of VS Code. During environment setup, the `code` command was mapped to Cursor as the default editor. Since Cursor is built directly on VS Code and supports identical MCP configuration, it was used as a drop-in replacement. All VS Code instructions from the assignment apply directly to Cursor with no changes. Cursor also has native AI agent support which made MCP integration more seamless.
+
 ---
 
 ## MCP Tool / API Documentation
@@ -101,7 +104,7 @@ python server.py
 ## Troubleshooting & FAQ
 
 **Q: MCP server not connecting?**  
-Make sure `python server.py` is running in a terminal before opening Cursor. The server must be running at `http://127.0.0.1:8000/sse`.
+Make sure `python server.py` is running in a terminall before opening Cursor. The server must be running at `http://127.0.0.1:8000/sse`.
 
 **Q: Maven build fails?**  
 Run `mvn spring-javaformat:apply` first to fix formatting issues, then retry.
@@ -141,7 +144,7 @@ The project was implemented in 5 phases:
 | Iteration 5 | system package | WelcomeController/CrashController 100%, WebConfiguration 77.8%, CacheConfiguration 66.7% |
 
 #### Insights from AI-Assisted Development
-The most impressive aspect was the agent's ability to self-debug. When tests failed due to formatting violations or incorrect assertions, the agent automatically ran `mvn spring-javaformat:apply`, identified the root cause, and fixed the tests without human intervention. This demonstrates the power of prompt chaining as described in the course lecture.
+The most impressive aspect was the agent's ability to self-debug. When tests failed due to formatting violations or incorrect assertions, the agent automatically ran `mvn spring-javaformat:apply`, identified the root cause, and fixed the tests without help. This demonstrates the power of prompt chaining as described in our course lecture.
 
 The JaCoCo XML parser MCP tool proved essential — by giving the agent structured coverage feedback, it could make targeted decisions about which methods to test next rather than generating random tests.
 
@@ -152,4 +155,4 @@ The JaCoCo XML parser MCP tool proved essential — by giving the agent structur
 - Extend to support Python projects using pytest and coverage.py
 
 ### Conclusion
-AI-assisted testing through MCP significantly accelerates the test generation process. The iterative feedback loop — generate, run, analyze, improve — mirrors how an expert developer would approach testing, but at machine speed. Human oversight was still needed for architectural decisions and handling Spring context complexities.
+AI-assisted testing through MCP significantly accelerates the test generation process. The iterative feedback loop generates, runs, analyzes, improves, and mirrors how an expert developer would approacch testing, but at machine speed. Human oversight was still needed for architectural decisions and handling Spring context complexities.
