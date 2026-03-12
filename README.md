@@ -11,6 +11,11 @@ This project uses Cursor IDE instead of VS Code. During environment setup, the `
 
 ---
 
+## Video Demonstration
+[SE333 Final Project Presentation](https://depaul.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9355a463-387d-4391-934c-b40b005f110c)
+
+---
+
 ## MCP Tool / API Documentation
 
 ### MCP Server: `se333-mcp-server`
